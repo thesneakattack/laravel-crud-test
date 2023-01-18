@@ -134,3 +134,30 @@ Add "watch" script to package.json for auto rebuild on updates:
     }
 }
 ```
+
+## Install Laravel Jetstream (Livewire + Blade)
+
+Install jetstream library
+```bash
+composer require laravel/jetstream
+```
+
+Install livewire components, (teams can be disabled later)
+```bash
+# php artisan jetstream:install livewire
+php artisan jetstream:install livewire --teams
+```
+
+Publish components
+```bash
+php artisan vendor:publish --tag=jetstream-views
+```
+
+Finalizing The Installation
+Build NPM dependencies and migrate datbase
+
+```bash
+npm install
+npm run build
+php artisan migrate
+```
