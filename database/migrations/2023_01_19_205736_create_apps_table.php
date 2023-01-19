@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('image', 80)->nullable();
             $table->text('collections')->nullable();
+            $table->text('collections_new')->nullable();
             $table->string('mapCenterAddress', 60)->nullable();
             $table->string('mapCenterAddressCoords_lat', 20)->nullable();
             $table->string('mapCenterAddressCoords_lng', 20)->nullable();
