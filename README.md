@@ -175,7 +175,7 @@ Sample Usage:
 php artisan migrate:generate
 ```
 
-## Install kitloong/laravel-migrations-generator
+## Install krlove/eloquent-model-generator
 
 https://github.com/krlove/eloquent-model-generator
 
