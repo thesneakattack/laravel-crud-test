@@ -161,3 +161,37 @@ npm install
 npm run build
 php artisan migrate
 ```
+
+## Install kitloong/laravel-migrations-generator
+
+https://github.com/kitloong/laravel-migrations-generator
+
+```bash
+composer require --dev kitloong/laravel-migrations-generator
+```
+
+Sample Usage:
+```bash
+php artisan migrate:generate
+```
+
+## Install kitloong/laravel-migrations-generator
+
+https://github.com/krlove/eloquent-model-generator
+
+```bash
+composer require --dev krlove/eloquent-model-generator
+```
+
+Register GeneratorServiceProvider:
+```php
+'providers' => [
+    // ...
+    Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
+];
+```
+
+Sample Usage:
+```bash
+php artisan krlove:generate:models --skip-table=users --skip-table=roles
+```
