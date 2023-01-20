@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('lflb_assets', function (Blueprint $table) {
             $table->comment('');
-            $table->integer('id')->default(0)->primary();
+            $table->integer('id', true);
             $table->string('_oldid', 30)->nullable();
             $table->string('orgId', 30)->nullable();
             $table->string('link', 130)->nullable();

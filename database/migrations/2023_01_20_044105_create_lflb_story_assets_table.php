@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('lflb_story_assets', function (Blueprint $table) {
             $table->comment('');
-            $table->integer('id')->default(0)->primary();
+            $table->integer('id', true);
             $table->string('_oldid', 30)->nullable();
             $table->integer('story')->nullable()->index('FK_lflb_story_assets_lflb_stories');
             $table->integer('asset')->nullable()->index('FK_lflb_story_assets_lflb_assets');

@@ -16,7 +16,7 @@
 
 -- Dumping structure for table laravel_crud_test.lflb_apps
 CREATE TABLE IF NOT EXISTS `lflb_apps` (
-  `id` int(11) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `_oldid` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `orgId` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `lflb_apps` (
   `mainColor` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `secondaryColor` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table laravel_crud_test.lflb_apps: ~15 rows (approximately)
 INSERT INTO `lflb_apps` (`id`, `_oldid`, `name`, `orgId`, `description`, `image`, `collections`, `collections_new`, `mapCenterAddress`, `mapCenterAddressCoords_lat`, `mapCenterAddressCoords_lng`, `mainColor`, `secondaryColor`) VALUES

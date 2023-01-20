@@ -16,7 +16,7 @@
 
 -- Dumping structure for table laravel_crud_test.lflb_story_assets
 CREATE TABLE IF NOT EXISTS `lflb_story_assets` (
-  `id` int(11) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `_oldid` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `story` int(11) DEFAULT NULL,
   `asset` int(11) DEFAULT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `lflb_story_assets` (
   KEY `FK_lflb_story_assets_lflb_assets` (`asset`),
   CONSTRAINT `FK_lflb_story_assets_lflb_assets` FOREIGN KEY (`asset`) REFERENCES `lflb_assets` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `FK_lflb_story_assets_lflb_stories` FOREIGN KEY (`story`) REFERENCES `lflb_stories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4472 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table laravel_crud_test.lflb_story_assets: ~4,566 rows (approximately)
 INSERT INTO `lflb_story_assets` (`id`, `_oldid`, `story`, `asset`, `caption`, `position`, `annotations`) VALUES

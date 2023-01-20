@@ -16,7 +16,7 @@
 
 -- Dumping structure for table laravel_crud_test.lflb_stories
 CREATE TABLE IF NOT EXISTS `lflb_stories` (
-  `id` int(11) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `_oldid` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
   `app` int(11) DEFAULT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `lflb_stories` (
   PRIMARY KEY (`id`),
   KEY `FK_lflb_stories_lflb_apps` (`app`),
   CONSTRAINT `FK_lflb_stories_lflb_apps` FOREIGN KEY (`app`) REFERENCES `lflb_apps` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=886 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table laravel_crud_test.lflb_stories: ~885 rows (approximately)
 INSERT INTO `lflb_stories` (`id`, `_oldid`, `title`, `app`, `description`, `image`, `imageUrl`, `collections`, `collections_new`, `startDay`, `startMonth`, `startYear`, `endDay`, `endMonth`, `endYear`, `locationName`, `location_lat`, `location_lng`, `metaData`) VALUES

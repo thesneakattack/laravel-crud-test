@@ -17,21 +17,21 @@
 -- Dumping structure for table laravel_crud_test.lflb_metadata
 CREATE TABLE IF NOT EXISTS `lflb_metadata` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `_oldid` varchar(30) NOT NULL,
-  `contributor` varchar(20) DEFAULT NULL,
-  `creator` varchar(30) DEFAULT NULL,
-  `description` varchar(10) DEFAULT NULL,
-  `format` varchar(10) DEFAULT NULL,
-  `identifier` varchar(10) DEFAULT NULL,
-  `language` varchar(10) DEFAULT NULL,
-  `publisher` varchar(20) DEFAULT NULL,
-  `relation` varchar(10) DEFAULT NULL,
-  `rights` varchar(10) DEFAULT NULL,
-  `source` varchar(30) DEFAULT NULL,
-  `subject` varchar(10) DEFAULT NULL,
-  `type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
+  `_oldid` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contributor` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `creator` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `format` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `identifier` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `language` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `publisher` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `relation` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rights` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `source` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subject` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table laravel_crud_test.lflb_metadata: ~21 rows (approximately)
 INSERT INTO `lflb_metadata` (`id`, `_oldid`, `contributor`, `creator`, `description`, `format`, `identifier`, `language`, `publisher`, `relation`, `rights`, `source`, `subject`, `type`) VALUES

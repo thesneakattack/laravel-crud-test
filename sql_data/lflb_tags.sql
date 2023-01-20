@@ -16,7 +16,7 @@
 
 -- Dumping structure for table laravel_crud_test.lflb_tags
 CREATE TABLE IF NOT EXISTS `lflb_tags` (
-  `id` int(11) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `_oldid` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `story` int(11) DEFAULT NULL,
   `storyid` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `lflb_tags` (
   PRIMARY KEY (`id`),
   KEY `FK_lflb_tags_lflb_stories` (`story`),
   CONSTRAINT `FK_lflb_tags_lflb_stories` FOREIGN KEY (`story`) REFERENCES `lflb_stories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1030 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table laravel_crud_test.lflb_tags: ~1,029 rows (approximately)
 INSERT INTO `lflb_tags` (`id`, `_oldid`, `story`, `storyid`, `value`) VALUES

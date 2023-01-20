@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('lflb_collections', function (Blueprint $table) {
             $table->comment('');
-            $table->integer('id')->default(0)->primary();
+            $table->integer('id', true);
             $table->string('_oldid', 30)->nullable();
             $table->string('title', 50);
             $table->string('description', 100)->nullable();

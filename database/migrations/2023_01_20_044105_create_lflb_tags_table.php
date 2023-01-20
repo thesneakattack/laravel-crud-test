@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('lflb_tags', function (Blueprint $table) {
             $table->comment('');
-            $table->integer('id')->default(0)->primary();
+            $table->integer('id', true);
             $table->string('_oldid', 30);
             $table->integer('story')->nullable()->index('FK_lflb_tags_lflb_stories');
             $table->string('storyid', 30)->nullable();
