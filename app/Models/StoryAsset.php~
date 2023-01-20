@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property integer $_newid
  * @property integer $story
  * @property integer $asset
+ * @property string $_id
  * @property string $_oldid
  * @property string $caption
  * @property boolean $position
@@ -18,16 +19,23 @@ use Illuminate\Database\Eloquent\Model;
 class StoryAsset extends Model
 {
     /**
+     * The primary key for the model.
+     * 
+     * @var string
+     */
+    protected $primaryKey = '_newid';
+
+    /**
      * @var array
      */
-    protected $fillable = ['story', 'asset', '_oldid', 'caption', 'position', 'annotations'];
+    protected $fillable = ['story', 'asset', '_id', '_oldid', 'caption', 'position', 'annotations'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function story()
     {
-        return $this->belongsTo('App\Models\Story', 'story');
+        return $this->belongsTo('App\Models\Story', 'story', '_newid');
     }
 
     /**
@@ -35,6 +43,6 @@ class StoryAsset extends Model
      */
     public function asset()
     {
-        return $this->belongsTo('App\Models\Asset', 'asset');
+        return $this->belongsTo('App\Models\Asset', 'asset', '_newid');
     }
 }

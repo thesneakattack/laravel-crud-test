@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property integer $_newid
  * @property integer $app
+ * @property string $_id
  * @property string $_oldid
  * @property string $title
  * @property string $description
@@ -31,16 +32,23 @@ use Illuminate\Database\Eloquent\Model;
 class Story extends Model
 {
     /**
+     * The primary key for the model.
+     * 
+     * @var string
+     */
+    protected $primaryKey = '_newid';
+
+    /**
      * @var array
      */
-    protected $fillable = ['app', '_oldid', 'title', 'description', 'image', 'imageUrl', 'collections', 'collections_new', 'startDay', 'startMonth', 'startYear', 'endDay', 'endMonth', 'endYear', 'locationName', 'location_lat', 'location_lng', 'metaData'];
+    protected $fillable = ['app', '_id', '_oldid', 'title', 'description', 'image', 'imageUrl', 'collections', 'collections_new', 'startDay', 'startMonth', 'startYear', 'endDay', 'endMonth', 'endYear', 'locationName', 'location_lat', 'location_lng', 'metaData'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function app()
     {
-        return $this->belongsTo('App\Models\App', 'app');
+        return $this->belongsTo('App\Models\App', 'app', '_newid');
     }
 
     /**
@@ -48,7 +56,7 @@ class Story extends Model
      */
     public function storyAssets()
     {
-        return $this->hasMany('App\Models\StoryAsset', 'story');
+        return $this->hasMany('App\Models\StoryAsset', 'story', '_newid');
     }
 
     /**
@@ -56,6 +64,6 @@ class Story extends Model
      */
     public function tags()
     {
-        return $this->hasMany('App\Models\Tag', 'story');
+        return $this->hasMany('App\Models\Tag', 'story', '_newid');
     }
 }

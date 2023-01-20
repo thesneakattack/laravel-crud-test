@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property integer $_newid
+ * @property string $_id
  * @property string $_oldid
  * @property integer $parentCollection
  * @property string $title
@@ -19,15 +20,22 @@ use Illuminate\Database\Eloquent\Model;
 class SubCollection extends Model
 {
     /**
+     * The primary key for the model.
+     * 
+     * @var string
+     */
+    protected $primaryKey = '_newid';
+
+    /**
      * @var array
      */
-    protected $fillable = ['_oldid', 'parentCollection', 'title', 'stories', 'stories_new', 'subTitle', 'mainImage', 'position'];
+    protected $fillable = ['_id', '_oldid', 'parentCollection', 'title', 'stories', 'stories_new', 'subTitle', 'mainImage', 'position'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function collection()
     {
-        return $this->belongsTo('App\Models\Collection', 'parentCollection');
+        return $this->belongsTo('App\Models\Collection', 'parentCollection', '_newid');
     }
 }

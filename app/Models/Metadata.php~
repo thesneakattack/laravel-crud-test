@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property integer $_newid
+ * @property string $_id
  * @property string $_oldid
  * @property string $contributor
  * @property string $creator
@@ -23,7 +24,14 @@ use Illuminate\Database\Eloquent\Model;
 class Metadata extends Model
 {
     /**
+     * The primary key for the model.
+     * 
+     * @var string
+     */
+    protected $primaryKey = '_newid';
+
+    /**
      * @var array
      */
-    protected $fillable = ['_oldid', 'contributor', 'creator', 'description', 'format', 'identifier', 'language', 'publisher', 'relation', 'rights', 'source', 'subject', 'type'];
+    protected $fillable = ['_id', '_oldid', 'contributor', 'creator', 'description', 'format', 'identifier', 'language', 'publisher', 'relation', 'rights', 'source', 'subject', 'type'];
 }
