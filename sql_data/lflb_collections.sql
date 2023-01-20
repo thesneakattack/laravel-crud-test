@@ -16,7 +16,7 @@
 
 -- Dumping structure for table laravel_crud_test.lflb_collections
 CREATE TABLE IF NOT EXISTS `lflb_collections` (
-  `id` bigint(20) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL DEFAULT 0,
   `_oldid` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `lflb_collections` (
   `introText` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `bodyText` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `mainImage` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table laravel_crud_test.lflb_collections: ~32 rows (approximately)

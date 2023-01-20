@@ -16,21 +16,21 @@
 
 -- Dumping structure for table laravel_crud_test.lflb_story_assets
 CREATE TABLE IF NOT EXISTS `lflb_story_assets` (
-  `id` bigint(20) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL DEFAULT 0,
   `_oldid` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `story` bigint(20) DEFAULT NULL,
-  `asset` bigint(20) DEFAULT NULL,
+  `story` int(11) DEFAULT NULL,
+  `asset` int(11) DEFAULT NULL,
   `caption` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `position` tinyint(4) DEFAULT NULL,
   `annotations` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  KEY `FK_lflb_story_assets_lflb_stories` (`story`) USING BTREE,
-  KEY `FK_lflb_story_assets_lflb_assets` (`asset`) USING BTREE,
+  PRIMARY KEY (`id`),
+  KEY `FK_lflb_story_assets_lflb_stories` (`story`),
+  KEY `FK_lflb_story_assets_lflb_assets` (`asset`),
   CONSTRAINT `FK_lflb_story_assets_lflb_assets` FOREIGN KEY (`asset`) REFERENCES `lflb_assets` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `FK_lflb_story_assets_lflb_stories` FOREIGN KEY (`story`) REFERENCES `lflb_stories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table laravel_crud_test.lflb_story_assets: ~4,471 rows (approximately)
+-- Dumping data for table laravel_crud_test.lflb_story_assets: ~4,566 rows (approximately)
 INSERT INTO `lflb_story_assets` (`id`, `_oldid`, `story`, `asset`, `caption`, `position`, `annotations`) VALUES
 	(1, '5d729fe921a36a1f9bfc750f', 1, 9, 'Ambrose Cramer, Jr., c. 1930', 0, ''),
 	(2, '5d729fe921a36a1f9bfc7511', 1, 10, '35 North Green Bay Road. Pictured c. 1990. History Center collection, 1998.16.6.', 2, ''),

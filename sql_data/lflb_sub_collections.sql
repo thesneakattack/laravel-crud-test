@@ -16,19 +16,19 @@
 
 -- Dumping structure for table laravel_crud_test.lflb_sub_collections
 CREATE TABLE IF NOT EXISTS `lflb_sub_collections` (
-  `id` bigint(20) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL DEFAULT 0,
   `_oldid` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `parentCollection` bigint(20) DEFAULT NULL,
+  `parentCollection` int(11) DEFAULT NULL,
   `title` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `stories` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `stories_new` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `subTitle` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `mainImage` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `position` tinyint(4) DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  KEY `FK_lflb_sub_collections_lflb_collections` (`parentCollection`) USING BTREE,
+  PRIMARY KEY (`id`),
+  KEY `FK_lflb_sub_collections_lflb_collections` (`parentCollection`),
   CONSTRAINT `FK_lflb_sub_collections_lflb_collections` FOREIGN KEY (`parentCollection`) REFERENCES `lflb_collections` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table laravel_crud_test.lflb_sub_collections: ~48 rows (approximately)
 INSERT INTO `lflb_sub_collections` (`id`, `_oldid`, `parentCollection`, `title`, `stories`, `stories_new`, `subTitle`, `mainImage`, `position`) VALUES

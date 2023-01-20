@@ -16,12 +16,12 @@
 
 -- Dumping structure for table laravel_crud_test.lflb_tags
 CREATE TABLE IF NOT EXISTS `lflb_tags` (
-  `id` bigint(20) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL DEFAULT 0,
   `_oldid` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `story` bigint(20) DEFAULT NULL,
+  `story` int(11) DEFAULT NULL,
   `storyid` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `value` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
+  PRIMARY KEY (`id`),
   KEY `FK_lflb_tags_lflb_stories` (`story`),
   CONSTRAINT `FK_lflb_tags_lflb_stories` FOREIGN KEY (`story`) REFERENCES `lflb_stories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -16,10 +16,10 @@
 
 -- Dumping structure for table laravel_crud_test.lflb_stories
 CREATE TABLE IF NOT EXISTS `lflb_stories` (
-  `id` bigint(20) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL DEFAULT 0,
   `_oldid` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `app` bigint(20) DEFAULT NULL,
+  `app` int(11) DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `imageUrl` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -35,8 +35,8 @@ CREATE TABLE IF NOT EXISTS `lflb_stories` (
   `location_lat` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `location_lng` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `metaData` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  KEY `FK_lflb_stories_lflb_apps` (`app`) USING BTREE,
+  PRIMARY KEY (`id`),
+  KEY `FK_lflb_stories_lflb_apps` (`app`),
   CONSTRAINT `FK_lflb_stories_lflb_apps` FOREIGN KEY (`app`) REFERENCES `lflb_apps` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

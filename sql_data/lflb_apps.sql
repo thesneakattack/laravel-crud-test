@@ -16,7 +16,7 @@
 
 -- Dumping structure for table laravel_crud_test.lflb_apps
 CREATE TABLE IF NOT EXISTS `lflb_apps` (
-  `id` bigint(20) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL DEFAULT 0,
   `_oldid` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `orgId` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `lflb_apps` (
   `mapCenterAddressCoords_lng` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mainColor` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `secondaryColor` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table laravel_crud_test.lflb_apps: ~15 rows (approximately)
