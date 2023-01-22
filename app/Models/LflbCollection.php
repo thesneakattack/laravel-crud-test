@@ -40,6 +40,6 @@ class LflbCollection extends Model
      */
     public function lflbSubCollections()
     {
-        return $this->hasMany('App\Models\LflbSubCollection', 'parentCollection');
+        return $this->hasMany('App\Models\LflbSubCollection', 'parentCollection')->orderBy('position');
     }
 }

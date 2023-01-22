@@ -3,19 +3,29 @@
 namespace App\Http\Livewire;
 
 use App\Models\LflbCollection;
+use App\Models\LflbSubCollection;
+
+use Illuminate\Support\Collection;
+
 use Livewire\Component;
 
 class Collections extends Component
 {
+
+    public $header = 'New Category';
+
     public $collections; //Collections property
     // public $_id, $_oldid, $_newid;
     public $title, $description, $coverPhoto, $subCollections, $subCollections_new, $featured, $introText, $bodyText, $mainImage; //Collections field names
     public $collection_id;
     public $isOpen = 0;
 
+    public $sub_categories;
+
     public function render()
     {
         $this->collections = LflbCollection::all();
+        // $this->subCategories();
         return view('livewire.collections.view');
     }
 
@@ -23,6 +33,13 @@ class Collections extends Component
     {
         $this->resetInputFields();
         $this->openModal();
+    }
+
+    public function subCategories()
+    {
+        $this->sub_categories = LflbCollection::find(1)->lflbSubCollections;
+        // $this->sub_categories = new Collection();
+        // if($this->)
     }
 
     public function openModal()

@@ -27,7 +27,7 @@
                         <th class="px-4 py-2">Description</th>
                         <!-- <th class="px-4 py-2">Cover Photo</th> -->
                         <!-- <th class="px-4 py-2">Sub Collections</th> -->
-                        <!-- <th class="px-4 py-2">Sub Collections_new</th> -->
+                        <th class="px-4 py-2">Sub Collections_new</th>
                         <th class="px-4 py-2">Featured?</th>
                         <!-- <th class="px-4 py-2">Intro Text</th> -->
                         <!-- <th class="px-4 py-2">Body Text</th> -->
@@ -43,7 +43,13 @@
                         <td class="border px-4 py-2">{{ $collection->description }}</td>
                         <!-- <td class="border px-4 py-2">{{ $collection->coverPhoto }}</td> -->
                         <!-- <td class="border px-4 py-2">{{ $collection->subCollections }}</td> -->
-                        <!-- <td class="border px-4 py-2">{{ $collection->subCollections_new }}</td> -->
+                        <td class="border px-4 py-2 text-sm">
+                            <ol>
+                                @foreach($collection->lflbSubCollections as $sub_collection)
+                                    <li>{{ $sub_collection->title }}</li>
+                                @endforeach
+                            </ol>
+                        </td>
                         <td class="border px-4 py-2">{{ $collection->featured }}</td>
                         <!-- <td class="border px-4 py-2">{{ $collection->introText }}</td> -->
                         <!-- <td class="border px-4 py-2">{{ $collection->bodyText }}</td> -->
@@ -59,3 +65,4 @@
         </div>
     </div>
 </div>
+<ol>

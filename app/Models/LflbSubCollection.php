@@ -37,4 +37,11 @@ class LflbSubCollection extends Model
     {
         return $this->belongsTo('App\Models\LflbCollection', 'parentCollection');
     }
+
+    // Custom code David F.
+    public function storyIds()
+    {
+        return explode(',', $this->stories_new);
+    }  
+
 }

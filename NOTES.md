@@ -12,9 +12,11 @@
 - development stuff:
     - migration generator installed
     - model generator installed
-
+- dev notes:
+    - the collections table name/model/class is confusing with the laravel nomenclature, should change this to "Category/SubCategory"
 - prod notes:
     - uninstall that generator shit in production
 
 - signage app notes:
     - model names/references at top of files (Model files, View Files, etc.) have now changed in crud-test and will need to be changed in signage app to reflect these changes
+    - this has been done and is working (for now)
