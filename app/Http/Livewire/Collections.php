@@ -59,7 +59,7 @@ class Collections extends Component
             'description' => 'required',
         ]);
    
-        Collection::updateOrCreate(['id' => $this->collection_id], [
+        LflbCollection::updateOrCreate(['id' => $this->collection_id], [
             'title' => $this->title,
             'description' => $this->description
         ]);
@@ -73,7 +73,7 @@ class Collections extends Component
     
     public function edit($id)
     {
-        $topic = Collection::findOrFail($id);
+        $topic = LflbCollection::findOrFail($id);
         $this->_oldid = $topic->_oldid;
         $this->title = $topic->title;
         $this->description = $topic->description;
@@ -84,7 +84,7 @@ class Collections extends Component
         $this->introText = $topic->introText;
         $this->bodyText = $topic->bodyText;
         $this->mainImage = $topic->mainImage;
-        
+
         $this->collection_id = $id;
     
         $this->openModal();
@@ -92,7 +92,7 @@ class Collections extends Component
     
     public function delete($id)
     {
-        Collection::find($id)->delete();
+        LflbCollection::find($id)->delete();
         session()->flash('message', 'Topic Deleted Successfully.');
     }    
 

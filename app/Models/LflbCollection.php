@@ -20,6 +20,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class LflbCollection extends Model
 {
+
+    public $timestamps = false;
+
     /**
      * Indicates if the IDs are auto-incrementing.
      * 
