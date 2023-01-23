@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $orgId
  * @property string $description
  * @property string $image
- * @property string $collections
- * @property string $collections_new
+ * @property string $categories
+ * @property string $categories_old
  * @property string $mapCenterAddress
  * @property string $mapCenterAddressCoords_lat
  * @property string $mapCenterAddressCoords_lng
@@ -23,22 +23,15 @@ use Illuminate\Database\Eloquent\Model;
 class LflbApp extends Model
 {
     /**
-     * Indicates if the IDs are auto-incrementing.
-     * 
-     * @var bool
-     */
-    public $incrementing = false;
-
-    /**
      * @var array
      */
-    protected $fillable = ['_oldid', 'name', 'orgId', 'description', 'image', 'collections', 'collections_new', 'mapCenterAddress', 'mapCenterAddressCoords_lat', 'mapCenterAddressCoords_lng', 'mainColor', 'secondaryColor'];
+    protected $fillable = ['_oldid', 'name', 'orgId', 'description', 'image', 'categories', 'categories_old', 'mapCenterAddress', 'mapCenterAddressCoords_lat', 'mapCenterAddressCoords_lng', 'mainColor', 'secondaryColor'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function lflbStories()
     {
-        return $this->hasMany('App\Models\LflbStory', 'app');
+        return $this->hasMany('App\Models\LflbStory', 'app_id');
     }
 }

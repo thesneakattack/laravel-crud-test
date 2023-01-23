@@ -18,16 +18,16 @@
 CREATE TABLE IF NOT EXISTS `lflb_tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `_oldid` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `story` int(11) DEFAULT NULL,
+  `story_id` int(11) DEFAULT NULL,
   `storyid` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `value` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_lflb_tags_lflb_stories` (`story`),
-  CONSTRAINT `FK_lflb_tags_lflb_stories` FOREIGN KEY (`story`) REFERENCES `lflb_stories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+  KEY `FK_lflb_tags_lflb_stories` (`story_id`),
+  CONSTRAINT `FK_lflb_tags_lflb_stories` FOREIGN KEY (`story_id`) REFERENCES `lflb_stories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1030 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table laravel_crud_test.lflb_tags: ~1,029 rows (approximately)
-INSERT INTO `lflb_tags` (`id`, `_oldid`, `story`, `storyid`, `value`) VALUES
+INSERT INTO `lflb_tags` (`id`, `_oldid`, `story_id`, `storyid`, `value`) VALUES
 	(1, '5dd60d4a9ae22e4b93ffce13', 108, '', 'Senator Farwell'),
 	(2, '5dd60d4a9ae22e4b93ffce14', 108, '', 'Charles Macdonald'),
 	(3, '5dd60d4a9ae22e4b93ffce15', 108, '', 'Leander McCormick'),

@@ -19,12 +19,12 @@ CREATE TABLE IF NOT EXISTS `lflb_stories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `_oldid` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `title` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `app` int(11) DEFAULT NULL,
+  `app_id` int(11) DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `imageUrl` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `collections` varchar(230) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `collections_new` varchar(230) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `categories_old` varchar(230) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `categories` varchar(230) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `startDay` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `startMonth` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `startYear` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -36,12 +36,12 @@ CREATE TABLE IF NOT EXISTS `lflb_stories` (
   `location_lng` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `metaData` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_lflb_stories_lflb_apps` (`app`),
-  CONSTRAINT `FK_lflb_stories_lflb_apps` FOREIGN KEY (`app`) REFERENCES `lflb_apps` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+  KEY `FK_lflb_stories_lflb_apps` (`app_id`),
+  CONSTRAINT `FK_lflb_stories_lflb_apps` FOREIGN KEY (`app_id`) REFERENCES `lflb_apps` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=886 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table laravel_crud_test.lflb_stories: ~885 rows (approximately)
-INSERT INTO `lflb_stories` (`id`, `_oldid`, `title`, `app`, `description`, `image`, `imageUrl`, `collections`, `collections_new`, `startDay`, `startMonth`, `startYear`, `endDay`, `endMonth`, `endYear`, `locationName`, `location_lat`, `location_lng`, `metaData`) VALUES
+INSERT INTO `lflb_stories` (`id`, `_oldid`, `title`, `app_id`, `description`, `image`, `imageUrl`, `categories_old`, `categories`, `startDay`, `startMonth`, `startYear`, `endDay`, `endMonth`, `endYear`, `locationName`, `location_lat`, `location_lng`, `metaData`) VALUES
 	(1, '5d729fe821a36a1f9bfc750b', 'Ambrose Cramer: Gentleman Architect', 1, '', 'e71be210-d0d0-11e9-9c50-1f4a59394f55.png', '', '5d95253ce8c73901d5b3a740', '1', '', '', '1930', '', '', '1930', 'Lake Forest, IL, USA', '', '', '5f1b3663d5aa0d77015a4465'),
 	(2, '5d72c7c547ac1629261ec4b8', 'John Vinci: Preservationist and Modernist', 1, '', 'aa6ad930-d0e8-11e9-8c6d-3b341113814a.jpg', '', '5d95253ce8c73901d5b3a740', '1', '', '', '', '', '', '', 'Lake Forest, IL, USA', '', '', '5dd72650855e665d780f7aa1'),
 	(3, '5d93cca70807740b011adb70', 'Aldis compound', 2, 'Campfire Girls at the Aldis Playhouse', '06d71710-e48a-11e9-80c9-07f1f6efebe1.jpg', '', '', '', '', '', '1905', '', '', '', 'Green Bay Road & Deerpath, Lake Forest, IL, USA', '', '', ''),

@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
- * @property integer $app
+ * @property integer $app_id
  * @property string $_oldid
  * @property string $title
  * @property string $description
  * @property string $image
  * @property string $imageUrl
- * @property string $collections
- * @property string $collections_new
+ * @property string $categories_old
+ * @property string $categories
  * @property string $startDay
  * @property string $startMonth
  * @property string $startYear
@@ -25,37 +25,30 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $location_lng
  * @property string $metaData
  * @property LflbApp $lflbApp
- * @property LflbStoryAsset[] $lflbStoryAssets
+ * @property LflbStoryPart[] $lflbStoryParts
  * @property LflbTag[] $lflbTags
  */
 class LflbStory extends Model
 {
     /**
-     * Indicates if the IDs are auto-incrementing.
-     * 
-     * @var bool
-     */
-    public $incrementing = false;
-
-    /**
      * @var array
      */
-    protected $fillable = ['app', '_oldid', 'title', 'description', 'image', 'imageUrl', 'collections', 'collections_new', 'startDay', 'startMonth', 'startYear', 'endDay', 'endMonth', 'endYear', 'locationName', 'location_lat', 'location_lng', 'metaData'];
+    protected $fillable = ['app_id', '_oldid', 'title', 'description', 'image', 'imageUrl', 'categories_old', 'categories', 'startDay', 'startMonth', 'startYear', 'endDay', 'endMonth', 'endYear', 'locationName', 'location_lat', 'location_lng', 'metaData'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function lflbApp()
     {
-        return $this->belongsTo('App\Models\LflbApp', 'app');
+        return $this->belongsTo('App\Models\LflbApp', 'app_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function lflbStoryAssets()
+    public function lflbStoryParts()
     {
-        return $this->hasMany('App\Models\LflbStoryAsset', 'story');
+        return $this->hasMany('App\Models\LflbStoryPart', 'story_id');
     }
 
     /**
@@ -63,6 +56,6 @@ class LflbStory extends Model
      */
     public function lflbTags()
     {
-        return $this->hasMany('App\Models\LflbTag', 'story');
+        return $this->hasMany('App\Models\LflbTag', 'story_id');
     }
 }

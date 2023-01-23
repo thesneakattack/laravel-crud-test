@@ -21,10 +21,13 @@ class Collections extends Component
     public $isOpen = 0;
 
     public $sub_categories;
+    public $stored_sub_categories;
+    public $selected_sub_categories = [];
 
     public function render()
     {
         $this->collections = LflbCollection::all();
+        // $this->sub_categories = LflbSubCollection::all();
         // $this->subCategories();
         return view('livewire.collections.view');
     }
@@ -35,12 +38,12 @@ class Collections extends Component
         $this->openModal();
     }
 
-    public function subCategories()
-    {
-        $this->sub_categories = LflbCollection::find(1)->lflbSubCollections;
-        // $this->sub_categories = new Collection();
-        // if($this->)
-    }
+    // public function subCategories()
+    // {
+    //     $this->sub_categories = LflbCollection::find(1)->lflbSubCollections;
+    //     // $this->sub_categories = new Collection();
+    //     // if($this->)
+    // }
 
     public function openModal()
     {
@@ -90,17 +93,18 @@ class Collections extends Component
     
     public function edit($id)
     {
-        $topic = LflbCollection::findOrFail($id);
-        $this->_oldid = $topic->_oldid;
-        $this->title = $topic->title;
-        $this->description = $topic->description;
-        $this->coverPhoto = $topic->coverPhoto;
-        $this->subCollections = $topic->subCollections;
-        $this->subCollections_new = $topic->subCollections_new;
-        $this->featured = $topic->featured;
-        $this->introText = $topic->introText;
-        $this->bodyText = $topic->bodyText;
-        $this->mainImage = $topic->mainImage;
+        $category = LflbCollection::findOrFail($id);
+        $this->_oldid = $category->_oldid;
+        $this->title = $category->title;
+        $this->description = $category->description;
+        $this->coverPhoto = $category->coverPhoto;
+        $this->subCollections = $category->subCollections;
+        $this->subCollections_new = $category->subCollections_new;
+        $this->featured = $category->featured;
+        $this->introText = $category->introText;
+        $this->bodyText = $category->bodyText;
+        $this->mainImage = $category->mainImage;
+        $this->sub_categories = $category->lflbSubCollections;
 
         $this->collection_id = $id;
     

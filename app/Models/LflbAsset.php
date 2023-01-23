@@ -17,17 +17,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $caption
  * @property string $tags
  * @property string $thumbnail
- * @property LflbStoryAsset[] $lflbStoryAssets
+ * @property LflbStoryPart[] $lflbStoryParts
  */
 class LflbAsset extends Model
 {
-    /**
-     * Indicates if the IDs are auto-incrementing.
-     * 
-     * @var bool
-     */
-    public $incrementing = false;
-
     /**
      * @var array
      */
@@ -36,8 +29,8 @@ class LflbAsset extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function lflbStoryAssets()
+    public function lflbStoryParts()
     {
-        return $this->hasMany('App\Models\LflbStoryAsset', 'asset');
+        return $this->hasMany('App\Models\LflbStoryPart', 'asset_id');
     }
 }

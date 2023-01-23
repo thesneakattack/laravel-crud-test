@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Livewire\Collections;
+use App\Http\Livewire\Categories\Categories;
 
-use App\Models\LflbCollection;
-use App\Models\LflbSubCollection;
+use App\Models\LflbCategory;
+use App\Models\LflbSubCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,19 +32,19 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('collections', Collections::class)->middleware('auth');
+Route::get('categories', Categories::class)->middleware('auth');
 
-Route::get('/categories/{id}', function($id) {
-    return view('testing.category', [
-        'category' => LflbCollection::find($id),
-        // 'subCategories' => LflbSubCollection::all()->where('parentCollection', $id)->sortBy('position'),
-        'subCategories' => LflbCollection::find($id)->lflbSubCollections->sortBy('position'),
-        'homePage' => true,
-        'navSettings' => [
-            "backHome" => false, //unless non default category? javascript reset history on fallback to default category?
-            "selectOk" => true,
-            "changeCategory" => true,
-            "scroll" => false // false, set to 'maybe?'
-        ]
-    ]);
-});
+// Route::get('/categories/{id}', function($id) {
+//     return view('testing.category', [
+//         'category' => LflbCollection::find($id),
+//         // 'subCategories' => LflbSubCollection::all()->where('parentCollection', $id)->sortBy('position'),
+//         'subCategories' => LflbCollection::find($id)->lflbSubCollections->sortBy('position'),
+//         'homePage' => true,
+//         'navSettings' => [
+//             "backHome" => false, //unless non default category? javascript reset history on fallback to default category?
+//             "selectOk" => true,
+//             "changeCategory" => true,
+//             "scroll" => false // false, set to 'maybe?'
+//         ]
+//     ]);
+// });
